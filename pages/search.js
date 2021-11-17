@@ -16,10 +16,18 @@ export default function Search({ searchResults }) {
 	return (
 		<div className="h-screen">
 			<Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
-			<main className="flex">
+			<main className="flex max-w-7xl mx-auto">
 				<section className="flex-grow pt-14 px-6">
-					<p className="text-xs">
-						300+ Stays- {range} - for {noOfGuests} guests
+					<p className="text-xs p-2">
+						300+ Stays-{" "}
+						<span className="bg-red-400 p-1 rounded-lg mx-1 font-semibold text-white">
+							{formattedStartDate}
+						</span>
+						-
+						<span className="bg-red-400 p-1 rounded-lg mx-1 font-semibold text-white">
+							{formattedEndDate}
+						</span>
+						- for {noOfGuests} guests
 					</p>
 					<h1 className="text-3xl font-semibold mt-2 mb-6">
 						Stays in {location}
@@ -29,7 +37,7 @@ export default function Search({ searchResults }) {
 						<p className="button">Type of place</p>
 						<p className="button">Price</p>
 						<p className="button">Rooms and Beds</p>
-						<p className="button">More filters</p>
+						<p className="button">More...</p>
 					</div>
 					<div className="flex flex-col">
 						{searchResults &&

@@ -101,11 +101,17 @@ export default function Header({ placeholder }) {
 							className="w-12 pl-2 outline-none text-lg text-red-400"
 						/>
 					</div>
-					<div className="flex">
-						<button className="flex-grow text-gray-500" onClick={resetInput}>
+					<div className="flex shadow-sm p-1">
+						<button
+							className="flex-grow text-gray-500 hover:bg-red-300 hover:text-white p-1 rounded-sm"
+							onClick={resetInput}
+						>
 							Cancel
 						</button>
-						<button className="flex-grow text-red-400" onClick={handleSearch}>
+						<button
+							className="flex-grow text-red-400 hover:bg-red-300 hover:text-white p-1 rounded-sm"
+							onClick={handleSearch}
+						>
 							Search
 						</button>
 					</div>
