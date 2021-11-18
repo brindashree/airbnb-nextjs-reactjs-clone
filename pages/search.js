@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 export default function Search({ searchResults }) {
 	const router = useRouter();
@@ -14,9 +15,9 @@ export default function Search({ searchResults }) {
 	const range = `${formattedStartDate} - ${formattedEndDate}`;
 
 	return (
-		<div className="h-screen">
+		<div className="h-screen ">
 			<Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
-			<main className="flex max-w-7xl mx-auto">
+			<main className="flex">
 				<section className="flex-grow pt-14 px-6">
 					<p className="text-xs p-2">
 						300+ Stays-{" "}
@@ -54,6 +55,9 @@ export default function Search({ searchResults }) {
 								/>
 							))}
 					</div>
+				</section>
+				<section className="hidden xl:inline-flex xl:min-w-[600px] ">
+					<Map searchResults={searchResults} />
 				</section>
 			</main>
 			<Footer />
